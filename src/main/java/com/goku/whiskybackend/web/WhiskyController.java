@@ -34,4 +34,5 @@ public class WhiskyController {
     public Whisky createWhisky(@Valid @RequestBody Whisky whisky) {
         return whiskyRepository.save(whisky);
     }
+
 }

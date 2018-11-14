@@ -1,13 +1,17 @@
 package com.goku.whiskybackend.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 //
 @Entity
 @Table(name = "whisky",schema="whisky")
-//@JsonPropertyOrder({"id","whiskyname","type","content","age","prize","rating","breweryid"})
+@JsonPropertyOrder({"id","whiskyname","type","content","age","prize","rating","breweryid"})
 public class Whisky {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -32,9 +36,18 @@ public class Whisky {
     @Column(name="rating")
     private String rating;
 
-//    @NotBlank
-    @Column(name="breweryid")
-    private String breweryid;
+    @ManyToOne
+    @JsonBackReference
+    @JoinColumn(name="breweryid", nullable=false)
+    private Brewery brewery;
+
+    public Brewery getBrewery() {
+        return brewery;
+    }
+
+    public void setBrewery(Brewery brewery) {
+        this.brewery = brewery;
+    }
 
     public Long getId() {
         return id;
@@ -92,11 +105,4 @@ public class Whisky {
         this.rating = rating;
     }
 
-    public String getBreweryid() {
-        return breweryid;
-    }
-
-    public void setBreweryid(String breweryid) {
-        this.breweryid = breweryid;
-    }
 }

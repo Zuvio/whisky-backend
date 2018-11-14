@@ -27,4 +27,5 @@ public class BreweryController {
     public Brewery getBreweryById(@PathVariable(value = "id") Long breweryId) {
         return breweryRepository.findById(breweryId).orElseThrow(() -> new ResourceNotFoundException("Brewery", "id", breweryId));
     }
+
 }
