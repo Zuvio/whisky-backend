@@ -1,0 +1,9 @@
+INSERT INTO `whisky`.`whisky` (`id`, `age`, `brewery_id`, `content`, `prize`, `rating`, `type`, `whiskyname`) VALUES ('1', '18', '1', '70cl', '37', '8.5', 'blend', 'Whisky1');
+INSERT INTO `whisky`.`whisky` (`id`, `age`, `brewery_id`, `content`, `prize`, `rating`, `type`, `whiskyname`) VALUES ('2', '18', '1', '70cl', '37', '8.5', 'blend', 'Whisky2');
+INSERT INTO `whisky`.`whisky` (`id`, `age`, `brewery_id`, `content`, `prize`, `rating`, `type`, `whiskyname`) VALUES ('3', '18', '1', '70cl', '37', '8.5', 'blend', 'Whisky3');
+INSERT INTO `whisky`.`whisky` (`id`, `age`, `brewery_id`, `content`, `prize`, `rating`, `type`, `whiskyname`) VALUES ('4', '18', '1', '70cl', '37', '8.5', 'blend', 'Whisky4');
+INSERT INTO `whisky`.`whisky` (`id`, `age`, `brewery_id`, `content`, `prize`, `rating`, `type`, `whiskyname`) VALUES ('5', '18', '1', '70cl', '37', '8.5', 'blend', 'Whisky5');
+INSERT INTO `whisky`.`whisky` (`id`, `age`, `brewery_id`, `content`, `prize`, `rating`, `type`, `whiskyname`) VALUES ('6', '18', '1', '70cl', '37', '8.5', 'blend', 'Whisky6');
+INSERT INTO `whisky`.`whisky` (`id`, `age`, `brewery_id`, `content`, `prize`, `rating`, `type`, `whiskyname`) VALUES ('7', '18', '1', '70cl', '37', '8.5', 'blend', 'Whisky7');
+INSERT INTO `whisky`.`whisky` (`id`, `age`, `brewery_id`, `content`, `prize`, `rating`, `type`, `whiskyname`) VALUES ('8', '18', '1', '70cl', '37', '8.5', 'blend', 'Whisky8');
+INSERT INTO `whisky`.`whisky` (`id`, `age`, `brewery_id`, `content`, `prize`, `rating`, `type`, `whiskyname`) VALUES ('9', '18', '1', '70cl', '37', '8.5', 'blend', 'Whisky9');

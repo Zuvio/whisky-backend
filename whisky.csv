@@ -1,0 +1,10 @@
+id,age,brewery_id,content,prize,rating,type,whiskyname
+"1,18,1,70cl,37,8.5,blend,""Chivas Regal"""
+2,18,1,70cl,37,8.5,blend,Whisky2
+3,18,1,70cl,37,8.5,blend,Whisky3
+4,18,2,70cl,37,8.5,blend,Whisky4
+5,18,2,70cl,37,8.5,blend,Whisky5
+6,18,2,70cl,37,8.5,blend,Whisky6
+7,18,3,70cl,37,8.5,blend,Whisky7
+8,18,3,70cl,37,8.5,blend,Whisky8
+9,18,3,70cl,37,8.5,blend,Whisky9
