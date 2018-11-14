@@ -36,6 +36,9 @@ public class Whisky {
     @Column(name="rating")
     private String rating;
 
+    @Column(name="brewery")
+    private String breweryname;
+
     @ManyToOne //many whiskys belong to 1 brewery -> linked on breweryid in whisky table
     @JsonBackReference //prevent json circular reference -> this one listens
     @JoinColumn(name="breweryid", nullable=false) // column breweryid in whisky links to brewery table
