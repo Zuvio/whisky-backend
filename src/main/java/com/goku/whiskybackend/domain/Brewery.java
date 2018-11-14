@@ -13,8 +13,8 @@ import java.util.List;
 @JsonPropertyOrder({"id","breweryName","adres_id","whiskys"})
 public class Brewery implements Serializable {
 
-    @OneToMany(mappedBy = "brewery")
-    @JsonManagedReference
+    @OneToMany(mappedBy = "brewery") //a brewery has many whiskys -> put in a list of whiskys
+    @JsonManagedReference //prevent circular reference -> this one asks
     private List<Whisky> whiskys;
 
     @Id
