@@ -29,7 +29,7 @@ public class WhiskyController {
         return whiskyRepository.findById(whiskyId).orElseThrow(() -> new ResourceNotFoundException("Whisky", "id", whiskyId));
     }
 
-    // Create a new Whisky
+    // Create a new Whisky -> deprecated want je kunt nu alleen een whisky aanmaken via brewery
     @PostMapping("/whiskys")
     public Whisky createWhisky(@Valid @RequestBody Whisky whisky) {
         return whiskyRepository.save(whisky);

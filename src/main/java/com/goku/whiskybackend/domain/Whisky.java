@@ -2,14 +2,17 @@ package com.goku.whiskybackend.domain;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 //
 @Entity
 @Table(name = "whisky",schema="whisky")
 @JsonPropertyOrder({"id","whiskyname","type","content","age","prize","rating","breweryid"})
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Whisky {
 
     @Id
@@ -17,7 +20,7 @@ public class Whisky {
     @Column(name="id")
     private Long id;
 
-    @NotBlank
+    @NotNull
     @Column(name="whiskyname")
     private String whiskyname;
 
@@ -35,9 +38,6 @@ public class Whisky {
 
     @Column(name="rating")
     private String rating;
-
-//    @Column(name="breweryid")
-//    private String breweryid;
 
     @ManyToOne //many whiskys belong to 1 brewery -> linked on breweryid in whisky table
     @JsonBackReference //prevent json circular reference -> this one listens
