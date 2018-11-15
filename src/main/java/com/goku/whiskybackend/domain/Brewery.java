@@ -41,9 +41,9 @@ public class Brewery implements Serializable {
     @NotNull
     private String breweryName;
 
-    @Column(name = "adresid")
-    @NotNull
-    private Long adres_id;
+//    @Column(name = "adresid")
+//    @NotNull
+//    private Long adres_id;
 
     public Long getId() {
         return id;
@@ -61,13 +61,13 @@ public class Brewery implements Serializable {
         this.breweryName = breweryName;
     }
 
-    public Long getAdres_id() {
-        return adres_id;
-    }
-
-    public void setAdres_id(Long adres_id) {
-        this.adres_id = adres_id;
-    }
+//    public Long getAdres_id() {
+//        return adres_id;
+//    }
+//
+//    public void setAdres_id(Long adres_id) {
+//        this.adres_id = adres_id;
+//    }
 
     public List<Whisky> getWhiskys() {
         return whiskys;
