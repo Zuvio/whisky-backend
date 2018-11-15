@@ -36,12 +36,12 @@ public class Whisky {
     @Column(name="rating")
     private String rating;
 
-    @Column(name="brewery")
-    private String breweryname;
+//    @Column(name="breweryid")
+//    private String breweryid;
 
     @ManyToOne //many whiskys belong to 1 brewery -> linked on breweryid in whisky table
     @JsonBackReference //prevent json circular reference -> this one listens
-    @JoinColumn(name="breweryid", nullable=false) // column breweryid in whisky links to brewery table
+    @JoinColumn(name="breweryid", nullable = false) // column breweryid in whisky links to brewery table
     private Brewery brewery;
 
     public Brewery getBrewery() {

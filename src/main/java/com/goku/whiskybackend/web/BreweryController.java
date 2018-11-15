@@ -16,6 +16,9 @@ public class BreweryController {
     @Autowired
     BreweryRepository breweryRepository;
 
+    @Autowired
+    WhiskyRepository whiskyRepository;
+
     //get al breweries
     @GetMapping("/breweries")
     public List<Brewery> getAllBreweries() {
@@ -26,6 +29,13 @@ public class BreweryController {
     @GetMapping("/breweries/{id}")
     public Brewery getBreweryById(@PathVariable(value = "id") Long breweryId) {
         return breweryRepository.findById(breweryId).orElseThrow(() -> new ResourceNotFoundException("Brewery", "id", breweryId));
+    }
+
+    //create whisky with brewery link
+    @PostMapping("/breweries/{id}/whisky")
+    public void createWhiskywithBreweryId(@PathVariable(value = "id") Long  whiskyId, @RequestBody Whisky whisky) {
+        whiskyRepository.save(whisky);
+        //POST: 	{"whiskyname":"Lekkerrr","brewery": {"id":1}}
     }
 
 }
