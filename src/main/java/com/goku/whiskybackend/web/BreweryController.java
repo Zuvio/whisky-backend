@@ -50,18 +50,18 @@ public class BreweryController {
     //create adres with brewery link          //POST: 	{"whiskyname":"Lekkerrr","brewery": {"id":1}}
     @PostMapping("/breweries/{id}/adres")
     public void createAdreswithBreweryId(@PathVariable(value = "id") Long  adresId, @RequestBody Adres adres) {
-        adresRepository.save(adres);
-    }
-    // Get only the current adres
+        adresRepository.save(adres); }
+
+    // Get one adres
     @GetMapping("/breweries/{id}/adres")
     public Adres getAdresById(@PathVariable(value = "id") Long adresId) {
-        return adresRepository.findById(adresId).orElseThrow(() -> new ResourceNotFoundException("Adres", "id", adresId));
-    }
+        return adresRepository.findById(adresId)
+                .orElseThrow(() -> new ResourceNotFoundException("Adres", "id", adresId)); }
+
     // Get all adresses
     @GetMapping("/breweries/{id}/addresses")
     public Iterable<Adres> getAdressesByBreweryId(@PathVariable(value = "id") Long breweryid) {
-        return adresRepository.getAdressesByBreweryId(breweryid);
-//        return adresRepository.findById(breweryId).orElseThrow(() -> new ResourceNotFoundException("Adres", "id", breweryId));
-    }
+        return adresRepository.getAdressesByBreweryId(breweryid);  }
+
 
 }
