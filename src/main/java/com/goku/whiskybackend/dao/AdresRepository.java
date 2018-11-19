@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AdresRepository extends JpaRepository<Adres, Long> {
+    Iterable<Adres> getAdressesByBreweryId(Long breweryid);
 }

@@ -52,4 +52,16 @@ public class BreweryController {
     public void createAdreswithBreweryId(@PathVariable(value = "id") Long  adresId, @RequestBody Adres adres) {
         adresRepository.save(adres);
     }
+    // Get only the current adres
+    @GetMapping("/breweries/{id}/adres")
+    public Adres getAdresById(@PathVariable(value = "id") Long adresId) {
+        return adresRepository.findById(adresId).orElseThrow(() -> new ResourceNotFoundException("Adres", "id", adresId));
+    }
+    // Get all adresses
+    @GetMapping("/breweries/{id}/addresses")
+    public Iterable<Adres> getAdressesByBreweryId(@PathVariable(value = "id") Long breweryid) {
+        return adresRepository.getAdressesByBreweryId(breweryid);
+//        return adresRepository.findById(breweryId).orElseThrow(() -> new ResourceNotFoundException("Adres", "id", breweryId));
+    }
+
 }
