@@ -4,6 +4,8 @@ import com.goku.whiskybackend.dao.*;
 import com.goku.whiskybackend.domain.*;
 import com.goku.whiskybackend.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -40,6 +42,10 @@ public class BreweryController {
     public void createWhiskywithBreweryId(@PathVariable(value = "id") Long  whiskyId, @RequestBody Whisky whisky) {
         whiskyRepository.save(whisky);
     }
+//    ResponseEntity<?> save(@Valid @PathVariable(value = "id") Long  whiskyId, @RequestBody Whisky whisky) {
+//        if (whisky.getId() == 0 && whisky.getWhiskyname() != null)
+//            return new ResponseEntity<>(whiskyRepository.save(whisky), HttpStatus.OK);
+//        else return new ResponseEntity<>("can not save", HttpStatus.BAD_REQUEST); }
 
     // Register a new Brewery
     @PostMapping("/breweries")
@@ -63,5 +69,9 @@ public class BreweryController {
     public Iterable<Adres> getAdressesByBreweryId(@PathVariable(value = "id") Long breweryid) {
         return adresRepository.getAdressesByBreweryId(breweryid);  }
 
+    // Get current adres
+    @GetMapping("/breweries/{id}/currentadres")
+    public Adres getCurrentAdresByadresId(@PathVariable(value = "id") Long adresId) {
+        return adresRepository.findCurrentAdresByadresId(adresId);  }
 
 }
