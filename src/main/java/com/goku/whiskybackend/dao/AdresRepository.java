@@ -18,6 +18,5 @@ public interface AdresRepository extends JpaRepository<Adres, Long> {
     //zelf query maken om alleen current adres op te halen, join brewery met adres
     @Query("SELECT a FROM Adres AS a WHERE breweryid=:adresId AND (a.startdate <= CURRENT_DATE) AND (a.stopdate > CURRENT_DATE OR a.stopdate = NULL)")
     Adres findCurrentAdresByadresId(@Param("adresId")Long adresId);
-
-
 }
+//SERVER RUIMTE HUREN OM JE APP TE HOSTEN

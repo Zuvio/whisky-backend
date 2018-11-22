@@ -73,5 +73,4 @@ public class BreweryController {
     @GetMapping("/breweries/{id}/currentadres")
     public Adres getCurrentAdresByadresId(@PathVariable(value = "id") Long adresId) {
         return adresRepository.findCurrentAdresByadresId(adresId);  }
-
 }

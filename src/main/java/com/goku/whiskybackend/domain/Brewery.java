@@ -41,6 +41,10 @@ public class Brewery implements Serializable {
     @NotNull
     private String breweryName;
 
+    @Column(name = "password")
+    @NotNull
+    private String password;
+
 //    @Column(name = "adresid")
 //    @NotNull
 //    private Long adres_id;
